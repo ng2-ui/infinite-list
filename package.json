@@ -1,24 +1,25 @@
 {
   "name": "ng2-infinite-list",
-  "version": "0.1.0",
-  "description": "Angular2 Infinite Scroll Directive",
+  "version": "0.2.0",
+  "description": "Angular2 Infinite List Directive",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/jsvalley/ng2-infinite-scroll.git"
+    "url": "git+https://github.com/ng2-ui/ng2-infinite-list.git"
   },
   "keywords": [
     "angular2",
     "scroll",
+    "list",
     "directive"
   ],
   "author": "allenhwkim@gmail.com",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jsvalley/ng2-infinite-scroll/issues"
+    "url": "https://github.com/ng2-ui/ng2-infinite-list/issues"
   },
-  "homepage": "https://github.com/jsvalley/ng2-infinite-scroll#readme"
+  "homepage": "https://github.com/ng2-ui/ng2-infinite-list#readme"
 }
