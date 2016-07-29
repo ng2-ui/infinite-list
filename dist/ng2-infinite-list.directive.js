@@ -9,13 +9,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require("ng2-utils/dist/index");
+var index_1 = require("ng2-utils/index");
 var Ng2InfiniteListDirective = (function () {
     function Ng2InfiniteListDirective(el) {
         var _this = this;
         this.endVisible = new core_1.EventEmitter();
+        this.elementVisible = index_1.elementVisible;
         this.scrollListener = function () {
-            var visible = index_1.elementVisible(_this.endEl, _this.el);
+            var visible = _this.elementVisible(_this.endEl, _this.el);
             if (_this.horizontal && (visible.left || visible.right)) {
                 _this.endVisible.emit(true);
             }
@@ -24,7 +25,6 @@ var Ng2InfiniteListDirective = (function () {
             }
         };
         this.el = el.nativeElement;
-        //this.elementVisible = elementVisible;
     }
     // setup list of sections
     Ng2InfiniteListDirective.prototype.ngOnInit = function () {

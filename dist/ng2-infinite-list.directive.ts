@@ -1,18 +1,18 @@
-import { Directive, ElementRef, Input, Output, EventEmitter } from '@angular/core';
-import {elementVisible} from "ng2-utils/dist/index";
+import {Directive, ElementRef, EventEmitter, Output, Input} from '@angular/core';
+import { elementVisible } from "ng2-utils/index";
 
 @Directive({ selector: '[ng2-infinite-list]' })
 export class Ng2InfiniteListDirective {
 
   @Input() horizontal: boolean;
   @Output() endVisible = new EventEmitter();
-  
+
   el: HTMLElement;
   endEl: HTMLElement;
+  elementVisible: any = elementVisible;
 
   constructor(el: ElementRef) {
     this.el = el.nativeElement;
-    //this.elementVisible = elementVisible;
   }
 
   // setup list of sections
@@ -26,7 +26,7 @@ export class Ng2InfiniteListDirective {
   }
   
   scrollListener = () => {
-    let visible = elementVisible(this.endEl, this.el);
+    let visible = this.elementVisible(this.endEl, this.el);
     if (this.horizontal && (visible.left || visible.right)) {
       this.endVisible.emit(true); 
     } else if (!this.horizontal && (visible.top || visible.bottom)) {

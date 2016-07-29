@@ -1,57 +1,84 @@
-import {Component, Type, ViewChild, ViewEncapsulation} from '@angular/core'
-import { Ng2MessagePopupComponent, Ng2PopupComponent} from 'ng2-popup';
-
-@Component({
-  template: `
-    <p>This is custom popup</p>
-    {{number}} <button (click)="number = number+1">increase number</button><br/>
-    <button (click)="popup.close()">close</button>
-  `
-})
-class CustomPopupComponent {
-  number: number = 0;
-}
+import {Component, Type} from '@angular/core'
+import {Ng2InfiniteListDirective} from "ng2-infinite-list";
 
 @Component({
   selector: 'my-app',
+  styles: ``
   template: `
-    `,
-  directives: [Ng2PopupComponent],
-  encapsulation: ViewEncapsulation.None,
+<ul ng2-infinite-list  class="infinite-list"
+ (endVisible)="loadMore(set1)">
+  <li *ngFor="let item of set1.list">{{item+1}}</li>
+  <div ng2-infinite-list-end>
+    <div *ngIf="set1.loadingInProgress">Loading</div>
+    <div *ngIf="set1.endOfList">End Of List</div>
+  </div>
+</ul>
+loading in progress : {{set1.loadingInProgress}}
+
+<div ng2-infinite-list horizontal="true" class="infinite-list horizontal"
+  (endVisible)="loadMore(set2)">
+  <div *ngFor="let item of set2.list">{{item+1}}</div>
+  <div ng2-infinite-list-end>
+    &nbsp;
+    <div *ngIf="set2.loadingInProgress">Loading</div>
+    <div *ngIf="set2.endOfList">End Of List</div>
+  </div>
+</div>
+loading in progress : {{set2.loadingInProgress}}
+`,
+  directives: [Ng2InfiniteListDirective],
   styles: [`
-   .popup-container.custom {
-     width: 200px; height: 200px; background: navy; color: #fff; text-align: center
-   }
-  `]
+.infinite-list {
+  overflow: auto;
+  border: 10px solid #333;
+  height: 200px;
+  position: relative;
+}
+.infinite-list > * {
+  min-height: 20px
+}
+
+.infinite-list > *:nth-child(odd) {
+  background-color: #eee
+}
+
+.infinite-list.horizontal {
+  height: 100px;
+  white-space: nowrap;
+  overflow-y: hidden;
+}
+.infinite-list.horizontal > div {
+  border: 1px solid #666;
+  width: 50px;
+  height: 80px;
+  display: inline-block;
+  margin: 10px;
+  vertical-align: top;
+}`]
 })
 export class AppComponent {
-
-  @ViewChild(Ng2PopupComponent) popup: Ng2PopupComponent;
-  message: string;
-
-  constructor() {}
-
-  openPopup(size, title) {
-    this.popup.open(Ng2MessagePopupComponent, {
-      classNames: size,
-      title: title,
-      message: "This is message given using popup.open()",
-      buttons: {
-        OK: () => {
-          this.message = "Ok button is pressed";
-        },
-        CANCEL: () => {
-          this.message = "Cancel button is pressed";
-          this.popup.close();
-        }
-      }
-    });
+  set1: any = {
+    limit: 10, offset: 0, endOfList: false, loadingInProgress: false, list: []
   }
-  
-  openCustomPopup() {
-    this.popup.open(CustomPopupComponent, {
-      classNames: 'custom',
-      closeButton: false,
-    });
+  set2: any = {
+    limit: 10, offset: 0, endOfList: false, loadingInProgress: false, list: []
+  }
+
+  loadMore(data) {
+    if (!data.loadingInProgress) {
+      if (data.offset > 99) {    // detect the end of list
+        data.endOfList = true;
+      } else {
+        setTimeout(() => data.loadingInProgress = true);
+        setTimeout(() => {      // mimics http call delay
+          let max = data.offset + data.limit;
+          for (let i = data.offset; i < max; i++) {
+            data.list.push(i);
+          }
+          data.offset = max;
+          data.loadingInProgress = false;
+        }, 1000);
+      }
+    }
   }
 }

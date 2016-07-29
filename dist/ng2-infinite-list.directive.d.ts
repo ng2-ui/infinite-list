@@ -4,6 +4,7 @@ export declare class Ng2InfiniteListDirective {
     endVisible: EventEmitter<{}>;
     el: HTMLElement;
     endEl: HTMLElement;
+    elementVisible: any;
     constructor(el: ElementRef);
     ngOnInit(): void;
     scrollListener: () => void;

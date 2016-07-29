@@ -3,7 +3,7 @@
     app: ".",
     '@angular': '../node_modules/@angular',
     'rxjs': '../node_modules/rxjs',
-    'ng2-overlay': '../node_modules/ng2-overlay'
+    'ng2-utils': '../node_modules/ng2-utils'
   };
   var packages = {
     app: { main: './main.ts', defaultExtension: 'ts' },
@@ -13,14 +13,14 @@
     '@angular/platform-browser-dynamic': { main: 'bundles/platform-browser-dynamic.umd.js', defaultExtension: 'js' },
     '@angular/platform-browser': { main: 'bundles/platform-browser.umd.js', defaultExtension: 'js' },
     rxjs: { defaultExtension: 'js' },
-    'ng2-overlay': {main: 'src/index.ts', defaultExtension: 'ts'}
+    'ng2-utils': {main: 'dist/index.ts', defaultExtension: 'ts'}
   };
 
-  map['ng2-popup'] = '../src';
-  packages['ng2-popup'] = {main: 'index.ts', defaultExtension: 'ts'};
-  map['ng2-popup'] = '../dist';
-  packages['ng2-popup'] = {main: 'index.js', defaultExtension: 'js'};
-  
+  map['ng2-infinite-list'] = '../dist';
+  packages['ng2-infinite-list'] = {main: 'index.js', defaultExtension: 'js'};
+  map['ng2-infinite-list'] = '../src';
+  packages['ng2-infinite-list'] = {main: 'index.ts', defaultExtension: 'ts'};
+
   System.config({
     transpiler: 'typescript', //use typescript for compilation
     typescriptOptions: {      //typescript compiler options
