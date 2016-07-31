@@ -3,7 +3,7 @@ import {Ng2InfiniteListDirective} from "ng2-infinite-list";
 
 @Component({
   selector: 'my-app',
-  styles: ``
+  directives: [Ng2InfiniteListDirective],
   template: `
 <ul ng2-infinite-list  class="infinite-list"
  (endVisible)="loadMore(set1)">
@@ -26,7 +26,6 @@ loading in progress : {{set1.loadingInProgress}}
 </div>
 loading in progress : {{set2.loadingInProgress}}
 `,
-  directives: [Ng2InfiniteListDirective],
   styles: [`
 .infinite-list {
   overflow: auto;
