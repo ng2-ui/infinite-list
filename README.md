@@ -1,9 +1,10 @@
 # ng2-infinite-list
 Angular2 Infinite List directive
 
-<a href="http://plnkr.co/edit/3LTMdS?p=preview">
+<a href="http://ng2-ui.github.io/#/infinite-list">
   <img src="http://i.imgur.com/5SDqQ6t.png"width="50% border="1" />
 </a>
+Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
 
 ## Install
 
