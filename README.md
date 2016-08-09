@@ -3,7 +3,8 @@ Angular2 Infinite List directive
 
 <a href="http://ng2-ui.github.io/#/infinite-list">
   <img src="http://i.imgur.com/5SDqQ6t.png"width="50% border="1" />
-</a>
+</a> 
+
 Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
 
 ## Install
