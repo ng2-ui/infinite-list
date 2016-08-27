@@ -1,9 +1,7 @@
 import {Component, Type} from '@angular/core'
-import {Ng2InfiniteListDirective} from "ng2-infinite-list";
 
 @Component({
   selector: 'my-app',
-  directives: [Ng2InfiniteListDirective],
   template: `
 <ul ng2-infinite-list  class="infinite-list"
  (endVisible)="loadMore(set1)">
@@ -58,10 +56,10 @@ loading in progress : {{set2.loadingInProgress}}
 export class AppComponent {
   set1: any = {
     limit: 10, offset: 0, endOfList: false, loadingInProgress: false, list: []
-  }
+  };
   set2: any = {
     limit: 10, offset: 0, endOfList: false, loadingInProgress: false, list: []
-  }
+  };
 
   loadMore(data) {
     if (!data.loadingInProgress) {
