@@ -18,7 +18,7 @@
 
   map['ng2-infinite-list'] = '../dist';
   packages['ng2-infinite-list'] =
-    {main: 'ng2-infiite-list.umd.js', defaultExtension: 'js'};
+    {main: 'ng2-infinite-list.umd.js', defaultExtension: 'js'};
   // map['ng2-infinite-list'] = '../src';
   // packages['ng2-infinite-list'] = {main: 'index.ts', defaultExtension: 'ts'};
 

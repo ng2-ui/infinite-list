@@ -9,12 +9,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var index_1 = require("ng2-utils/index");
+var ng2_utils_1 = require("ng2-utils");
 var Ng2InfiniteListDirective = (function () {
     function Ng2InfiniteListDirective(el) {
         var _this = this;
         this.endVisible = new core_1.EventEmitter();
-        this.elementVisible = index_1.elementVisible;
+        this.elementVisible = ng2_utils_1.elementVisible;
         this.scrollListener = function () {
             var visible = _this.elementVisible(_this.endEl, _this.el);
             if (_this.horizontal && (visible.left || visible.right)) {
