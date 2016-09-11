@@ -14,15 +14,15 @@ Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
         $ npm install ng2-infinite-list --save
 
 2. add `map` and `packages` to your `systemjs.config.js`
-        map['ng2-xxxxxxx'] = 'node_modules/ng2-xxxxxxx/dist';
-        packages['ng2-xxxxxxxx'] = { main: 'index.js', defaultExtension: 'js' }
+        map['ng2-infinite-list'] = 'node_modules/ng2-infinite-list/dist';
+        packages['ng2-infinite-list'] = { main: 'ng2-infinite-list.umd.js', defaultExtension: 'js' }
 
-3. import Ng2XXXXXXXX to your AppModule
+3. import Ng2InfiniteList to your AppModule
         import { NgModule } from '@angular/core';
         import { FormsModule } from "@angular/forms";
         import { BrowserModule  } from '@angular/platform-browser';
         import { AppComponent } from './app.component';
-        import { Ng2XXXXXXXX } from 'ng2-XXXXXXXXXX';
+        import { Ng2InfiniteList } from 'ng2-infinite-list';
         
         @NgModule({
           imports: [BrowserModule, FormsModule, Ng2XXXXXXX],

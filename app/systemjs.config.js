@@ -16,12 +16,11 @@
     rxjs: { defaultExtension: 'js' }
   };
 
-  map['ng2-utils'] = '../node_modules/ng2-utils/dist';
-  packages['ng2-utils'] =  {main: 'index.ts', defaultExtension: 'ts'};
   map['ng2-infinite-list'] = '../dist';
-  packages['ng2-infinite-list'] = {main: 'index.js', defaultExtension: 'js'};
-  map['ng2-infinite-list'] = '../src';
-  packages['ng2-infinite-list'] = {main: 'index.ts', defaultExtension: 'ts'};
+  packages['ng2-infinite-list'] =
+    {main: 'ng2-infiite-list.umd.js', defaultExtension: 'js'};
+  // map['ng2-infinite-list'] = '../src';
+  // packages['ng2-infinite-list'] = {main: 'index.ts', defaultExtension: 'ts'};
 
   System.config({
     transpiler: 'typescript', //use typescript for compilation
