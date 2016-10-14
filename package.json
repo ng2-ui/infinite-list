@@ -1,7 +1,10 @@
 {
   "name": "ng2-infinite-list",
-  "version": "0.4.1",
+  "version": "0.4.2",
   "description": "Angular2 Infinite List Directive",
+  "main": "dist/ng2-infinite-list.umd.js",
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -12,8 +15,6 @@
     "url": "https://github.com/ng2-ui/ng2-infinite-list/issues"
   },
   "homepage": "https://github.com/ng2-ui/ng2-infinite-list#readme",
-  "main": "dist/ng2-infinite-list.umd.js",
-  "typings": "dist/index.d.ts",
   "scripts": {
     "start": "http-server -o",
     "clean": "rimraf dist",
