@@ -1,7 +1,7 @@
 # ng2-infinite-list
 Angular2 Infinite List directive
 
-<a href="http://ng2-ui.github.io/#/infinite-list">
+<a href="https://rawgit.com/ng2-ui/ng2-infinite-list/master/app/index.html">
   <img src="http://i.imgur.com/5SDqQ6t.png"width="50% border="1" />
 </a> 
 
