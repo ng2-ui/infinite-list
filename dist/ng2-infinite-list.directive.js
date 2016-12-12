@@ -8,7 +8,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var core_1 = require('@angular/core');
+var core_1 = require("@angular/core");
 var ng2_utils_1 = require("ng2-utils");
 var Ng2InfiniteListDirective = (function () {
     function Ng2InfiniteListDirective(el) {
@@ -36,19 +36,19 @@ var Ng2InfiniteListDirective = (function () {
         this.el.addEventListener('scroll', this.scrollListener);
         window.addEventListener('resize', this.scrollListener);
     };
-    __decorate([
-        core_1.Input(), 
-        __metadata('design:type', Boolean)
-    ], Ng2InfiniteListDirective.prototype, "horizontal", void 0);
-    __decorate([
-        core_1.Output(), 
-        __metadata('design:type', Object)
-    ], Ng2InfiniteListDirective.prototype, "endVisible", void 0);
-    Ng2InfiniteListDirective = __decorate([
-        core_1.Directive({ selector: '[ng2-infinite-list]' }), 
-        __metadata('design:paramtypes', [core_1.ElementRef])
-    ], Ng2InfiniteListDirective);
     return Ng2InfiniteListDirective;
 }());
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], Ng2InfiniteListDirective.prototype, "horizontal", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", Object)
+], Ng2InfiniteListDirective.prototype, "endVisible", void 0);
+Ng2InfiniteListDirective = __decorate([
+    core_1.Directive({ selector: '[ng2-infinite-list]' }),
+    __metadata("design:paramtypes", [core_1.ElementRef])
+], Ng2InfiniteListDirective);
 exports.Ng2InfiniteListDirective = Ng2InfiniteListDirective;
 //# sourceMappingURL=ng2-infinite-list.directive.js.map

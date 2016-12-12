@@ -72,16 +72,16 @@ return /******/ (function(modules) { // webpackBootstrap
 	var Ng2InfiniteListModule = (function () {
 	    function Ng2InfiniteListModule() {
 	    }
-	    Ng2InfiniteListModule = __decorate([
-	        core_1.NgModule({
-	            imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-	            declarations: [ng2_infinite_list_directive_1.Ng2InfiniteListDirective],
-	            exports: [ng2_infinite_list_directive_1.Ng2InfiniteListDirective]
-	        }), 
-	        __metadata('design:paramtypes', [])
-	    ], Ng2InfiniteListModule);
 	    return Ng2InfiniteListModule;
 	}());
+	Ng2InfiniteListModule = __decorate([
+	    core_1.NgModule({
+	        imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
+	        declarations: [ng2_infinite_list_directive_1.Ng2InfiniteListDirective],
+	        exports: [ng2_infinite_list_directive_1.Ng2InfiniteListDirective]
+	    }),
+	    __metadata("design:paramtypes", [])
+	], Ng2InfiniteListModule);
 	exports.Ng2InfiniteListModule = Ng2InfiniteListModule;
 
 
@@ -145,20 +145,20 @@ return /******/ (function(modules) { // webpackBootstrap
 	        this.el.addEventListener('scroll', this.scrollListener);
 	        window.addEventListener('resize', this.scrollListener);
 	    };
-	    __decorate([
-	        core_1.Input(), 
-	        __metadata('design:type', Boolean)
-	    ], Ng2InfiniteListDirective.prototype, "horizontal", void 0);
-	    __decorate([
-	        core_1.Output(), 
-	        __metadata('design:type', Object)
-	    ], Ng2InfiniteListDirective.prototype, "endVisible", void 0);
-	    Ng2InfiniteListDirective = __decorate([
-	        core_1.Directive({ selector: '[ng2-infinite-list]' }), 
-	        __metadata('design:paramtypes', [core_1.ElementRef])
-	    ], Ng2InfiniteListDirective);
 	    return Ng2InfiniteListDirective;
 	}());
+	__decorate([
+	    core_1.Input(),
+	    __metadata("design:type", Boolean)
+	], Ng2InfiniteListDirective.prototype, "horizontal", void 0);
+	__decorate([
+	    core_1.Output(),
+	    __metadata("design:type", Object)
+	], Ng2InfiniteListDirective.prototype, "endVisible", void 0);
+	Ng2InfiniteListDirective = __decorate([
+	    core_1.Directive({ selector: '[ng2-infinite-list]' }),
+	    __metadata("design:paramtypes", [core_1.ElementRef])
+	], Ng2InfiniteListDirective);
 	exports.Ng2InfiniteListDirective = Ng2InfiniteListDirective;
 
 
