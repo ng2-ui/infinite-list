@@ -12,10 +12,10 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppComponent }   from './app.component';
 
 //noinspection TypeScriptCheckImport
-import { Ng2InfiniteListModule } from 'ng2-infinite-list';
+import { NguiInfiniteListModule } from '@ngui/infinite-list';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, Ng2InfiniteListModule],
+  imports: [BrowserModule, FormsModule, NguiInfiniteListModule],
   declarations: [AppComponent],
   bootstrap: [ AppComponent ]
 })

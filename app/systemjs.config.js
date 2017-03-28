@@ -16,11 +16,7 @@
     rxjs: { defaultExtension: 'js' }
   };
 
-  map['ng2-infinite-list'] = '../dist';
-  packages['ng2-infinite-list'] =
-    {main: 'ng2-infinite-list.umd.js', defaultExtension: 'js'};
-  // map['ng2-infinite-list'] = '../src';
-  // packages['ng2-infinite-list'] = {main: 'index.ts', defaultExtension: 'ts'};
+  map['@ngui/infinite-list'] = '../dist/infinite-list.umd.js';
 
   System.config({
     transpiler: 'typescript', //use typescript for compilation

@@ -24,7 +24,7 @@
     "outDir": "dist",
     "baseUrl": "src",
     "paths": {
-      "ng2-infinite-list": ["./index"]
+      "@ngui/infinite-list": ["./index"]
     }
   },
   "files": [

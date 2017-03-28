@@ -1,7 +1,7 @@
-# ng2-infinite-list
+# infinite-list
 Angular2 Infinite List directive
 
-<a href="https://rawgit.com/ng2-ui/ng2-infinite-list/master/app/index.html">
+<a href="https://rawgit.com/ng2-ui/infinite-list/master/app/index.html">
   <img src="http://i.imgur.com/5SDqQ6t.png"width="50% border="1" />
 </a> 
 
@@ -9,23 +9,22 @@ Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
 
 ## Install
 
-1. install ng2-infinite-list
+1. install @ngui/infinite-list
 
-        $ npm install ng2-infinite-list --save
+        $ npm install @ngui/infinite-list --save
 
 2. add `map` and `packages` to your `systemjs.config.js`
-        map['ng2-infinite-list'] = 'node_modules/ng2-infinite-list/dist';
-        packages['ng2-infinite-list'] = { main: 'ng2-infinite-list.umd.js', defaultExtension: 'js' }
+        map['@ngui/infinite-list'] = 'node_modules/@ngui/infinite-list/dist/infinite-list.umd.js';
 
-3. import Ng2InfiniteList to your AppModule
+3. import NguiInfiniteList to your AppModule
         import { NgModule } from '@angular/core';
         import { FormsModule } from "@angular/forms";
         import { BrowserModule  } from '@angular/platform-browser';
         import { AppComponent } from './app.component';
-        import { Ng2InfiniteList } from 'ng2-infinite-list';
+        import { NguiInfiniteListModule } from '@ngui/infinite-list';
         
         @NgModule({
-          imports: [BrowserModule, FormsModule, Ng2XXXXXXX],
+          imports: [BrowserModule, FormsModule, NguiInfilistListModule],
           declarations: [AppComponent],
           bootstrap: [ AppComponent ]
         })
@@ -64,10 +63,10 @@ please send me email to `allenhwkim AT gmail.com` with your github id.
 
 ## Use it in your code
 
-    <ul ng2-infinite-list  class="infinite-list"
+    <ul ngui-infinite-list  class="infinite-list"
      (endVisible)="loadMore(set1)">
       <li *ngFor="let item of set1.list">{{item+1}}</li>
-      <div ng2-infinite-list-end>
+      <div ngui-infinite-list-end>
         <div *ngIf="set1.loadingInProgress">Loading</div>
         <div *ngIf="set1.endOfList">End Of List</div>
       </div>
@@ -77,8 +76,8 @@ please send me email to `allenhwkim AT gmail.com` with your github id.
 
 ### To start
 
-    $ git clone https://github.com/ng2-ui/ng2-infinite-list.git
-    $ cd ng2-infinite-list
+    $ git clone https://github.com/ng2-ui/infinite-list.git
+    $ cd infinite-list
     $ npm install
     $ npm start
 

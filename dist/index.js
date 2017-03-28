@@ -11,20 +11,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
 var platform_browser_1 = require("@angular/platform-browser");
-var ng2_infinite_list_directive_1 = require("./ng2-infinite-list.directive");
-exports.Ng2InfiniteListDirective = ng2_infinite_list_directive_1.Ng2InfiniteListDirective;
-var Ng2InfiniteListModule = (function () {
-    function Ng2InfiniteListModule() {
+var infinite_list_directive_1 = require("./infinite-list.directive");
+exports.NguiInfiniteListDirective = infinite_list_directive_1.NguiInfiniteListDirective;
+var NguiInfiniteListModule = (function () {
+    function NguiInfiniteListModule() {
     }
-    return Ng2InfiniteListModule;
+    return NguiInfiniteListModule;
 }());
-Ng2InfiniteListModule = __decorate([
+NguiInfiniteListModule = __decorate([
     core_1.NgModule({
         imports: [platform_browser_1.BrowserModule, forms_1.FormsModule],
-        declarations: [ng2_infinite_list_directive_1.Ng2InfiniteListDirective],
-        exports: [ng2_infinite_list_directive_1.Ng2InfiniteListDirective]
+        declarations: [infinite_list_directive_1.NguiInfiniteListDirective],
+        exports: [infinite_list_directive_1.NguiInfiniteListDirective]
     }),
     __metadata("design:paramtypes", [])
-], Ng2InfiniteListModule);
-exports.Ng2InfiniteListModule = Ng2InfiniteListModule;
+], NguiInfiniteListModule);
+exports.NguiInfiniteListModule = NguiInfiniteListModule;
 //# sourceMappingURL=index.js.map

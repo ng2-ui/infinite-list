@@ -2,15 +2,15 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from "@angular/forms";
 import { BrowserModule  } from '@angular/platform-browser';
 
-import { Ng2InfiniteListDirective } from "./ng2-infinite-list.directive";
+import { NguiInfiniteListDirective } from "./infinite-list.directive";
 
 export {
-  Ng2InfiniteListDirective,
+  NguiInfiniteListDirective,
 };
 
 @NgModule({
   imports: [ BrowserModule, FormsModule ],
-  declarations: [Ng2InfiniteListDirective],
-  exports:  [Ng2InfiniteListDirective]
+  declarations: [NguiInfiniteListDirective],
+  exports:  [NguiInfiniteListDirective]
 })
-export class Ng2InfiniteListModule {}
+export class NguiInfiniteListModule {}

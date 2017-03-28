@@ -4,7 +4,7 @@ const config = {
   resolve: {
     extensions: ['', '.ts', '.webpack.js', '.web.js', '.js'],
     alias: {
-      'ng2-infinite-list': '../src/index.ts'
+      '@ngui/infinite-list': '../src/index.ts'
     }
   },
   devtool: 'source-map',

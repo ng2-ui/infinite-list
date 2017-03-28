@@ -1,4 +1,4 @@
-import { Ng2InfiniteListDirective } from "./ng2-infinite-list.directive";
-export { Ng2InfiniteListDirective };
-export declare class Ng2InfiniteListModule {
+import { NguiInfiniteListDirective } from "./infinite-list.directive";
+export { NguiInfiniteListDirective };
+export declare class NguiInfiniteListModule {
 }

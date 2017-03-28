@@ -3,20 +3,20 @@ import {Component, Type} from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-<ul ng2-infinite-list  class="infinite-list"
+<ul ngui-infinite-list  class="infinite-list"
  (endVisible)="loadMore(set1)">
   <li *ngFor="let item of set1.list">{{item+1}}</li>
-  <div ng2-infinite-list-end>
+  <div ngui-infinite-list-end>
     <div *ngIf="set1.loadingInProgress">Loading</div>
     <div *ngIf="set1.endOfList">End Of List</div>
   </div>
 </ul>
 loading in progress : {{set1.loadingInProgress}}
 
-<div ng2-infinite-list horizontal="true" class="infinite-list horizontal"
+<div ngui-infinite-list horizontal="true" class="infinite-list horizontal"
   (endVisible)="loadMore(set2)">
   <div *ngFor="let item of set2.list">{{item+1}}</div>
-  <div ng2-infinite-list-end>
+  <div ngui-infinite-list-end>
     &nbsp;
     <div *ngIf="set2.loadingInProgress">Loading</div>
     <div *ngIf="set2.endOfList">End Of List</div>
