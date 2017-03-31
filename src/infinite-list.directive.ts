@@ -5,6 +5,7 @@ import { elementVisible } from "@ngui/utils";
 export class NguiInfiniteListDirective {
 
   @Input() horizontal: boolean;
+  @Input() enableWindowScroll : boolean = false;
   @Output() endVisible = new EventEmitter();
 
   el: HTMLElement;
@@ -13,6 +14,7 @@ export class NguiInfiniteListDirective {
 
   constructor(el: ElementRef) {
     this.el = el.nativeElement;
+    
   }
 
   // setup list of sections
@@ -20,13 +22,24 @@ export class NguiInfiniteListDirective {
     this.endEl = <HTMLElement>this.el.querySelector('[ngui-infinite-list-end]');
     if (!this.endEl) { throw "Invalid 'ngui-infinite-list-end";}
     this.scrollListener();
+
+    if(this.enableWindowScroll){
+      window.addEventListener('scroll',this.scrollListener);
+    } else{
+      this.el.addEventListener('scroll', this.scrollListener);
+    }
     
-    this.el.addEventListener('scroll', this.scrollListener);
     window.addEventListener('resize', this.scrollListener);
   }
   
   scrollListener = () => {
-    let visible = this.elementVisible(this.endEl, this.el);
+    let visible;
+    if(this.enableWindowScroll){
+      visible = this.elementVisible(this.endEl,window)
+    } else {
+      visible = this.elementVisible(this.endEl, this.el);
+    }
+    
     if (this.horizontal && (visible.left || visible.right)) {
       this.endVisible.emit(true); 
     } else if (!this.horizontal && (visible.top || visible.bottom)) {
