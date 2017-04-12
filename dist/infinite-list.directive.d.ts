@@ -1,6 +1,7 @@
 import { ElementRef, EventEmitter } from '@angular/core';
 export declare class NguiInfiniteListDirective {
     horizontal: boolean;
+    enableWindowScroll: boolean;
     endVisible: EventEmitter<{}>;
     el: HTMLElement;
     endEl: HTMLElement;

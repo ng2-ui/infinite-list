@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 const config = {
   resolve: {
-    extensions: ['', '.ts', '.webpack.js', '.web.js', '.js'],
+    extensions: ['*', '.ts', '.webpack.js', '.web.js', '.js'],
     alias: {
       '@ngui/infinite-list': '../src/index.ts'
     }
@@ -11,14 +11,11 @@ const config = {
   entry: './app/main.ts',
   module: {
     loaders: [
-      { test: /\.ts$/, loaders: ['ts', 'angular2-template-loader'] },
+      { test: /\.ts$/, use: [{loader: 'ts-loader',options: {include: ['src/**/*.ts', 'app/**/*.ts']}},{loader: 'angular2-template-loader'}]},
       { test: /\.html$/, loader: 'raw' }
     ]
   },
   plugins: [],
-  ts: {
-    include: ['src/**/*.ts', 'app/**/*.ts']
-  },
   output: {
     path: `${__dirname}/build/`,
     publicPath: '/build/',
