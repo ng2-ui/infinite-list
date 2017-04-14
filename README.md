@@ -22,9 +22,11 @@ Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
         $ npm install @ngui/infinite-list --save
 
 2. add `map` and `packages` to your `systemjs.config.js`
+
         map['@ngui/infinite-list'] = 'node_modules/@ngui/infinite-list/dist/infinite-list.umd.js';
 
 3. import NguiInfiniteList to your AppModule
+
         import { NgModule } from '@angular/core';
         import { FormsModule } from "@angular/forms";
         import { BrowserModule  } from '@angular/platform-browser';
@@ -32,7 +34,7 @@ Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
         import { NguiInfiniteListModule } from '@ngui/infinite-list';
         
         @NgModule({
-          imports: [BrowserModule, FormsModule, NguiInfilistListModule],
+          imports: [BrowserModule, FormsModule, NguiInfiniteListModule],
           declarations: [AppComponent],
           bootstrap: [ AppComponent ]
         })
