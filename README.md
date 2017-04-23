@@ -40,9 +40,18 @@ Plunker Example: http://plnkr.co/edit/3LTMdS?p=preview
         })
         export class AppModule { }
 
-## Use it in your template
- 
-     <input auto-complete [(ngModel)]="myData" [source]="mySource" />
+## Use it in your code
+
+```
+    <ul ngui-infinite-list  class="infinite-list" [disableScrollListener]="set1.loadingInProgress"
+     (endVisible)="loadMore(set1)">
+      <li *ngFor="let item of set1.list">{{item+1}}</li>
+      <div ngui-infinite-list-end>
+        <div *ngIf="set1.loadingInProgress">Loading</div>
+        <div *ngIf="set1.endOfList">End Of List</div>
+      </div>
+    </ul>
+```
          
 For full example, please check out `test` directory to see the example of;
 
@@ -70,18 +79,6 @@ on https://ng2-ui.github.io, and a member of ng2-ui too.
 If you are interested in becoming a contributor and/or a member of ng-ui,
 please send me email to `allenhwkim AT gmail.com` with your github id. 
 
-
-## Use it in your code
-
-    <ul ngui-infinite-list  class="infinite-list"
-     (endVisible)="loadMore(set1)">
-      <li *ngFor="let item of set1.list">{{item+1}}</li>
-      <div ngui-infinite-list-end>
-        <div *ngIf="set1.loadingInProgress">Loading</div>
-        <div *ngIf="set1.endOfList">End Of List</div>
-      </div>
-    </ul>`
-
 ## For Developers
 
 ### To start
@@ -90,4 +87,3 @@ please send me email to `allenhwkim AT gmail.com` with your github id.
     $ cd infinite-list
     $ npm install
     $ npm start
-

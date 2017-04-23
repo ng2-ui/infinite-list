@@ -4,20 +4,36 @@ import { elementVisible } from "@ngui/utils";
 @Directive({ selector: '[ngui-infinite-list]' })
 export class NguiInfiniteListDirective {
 
-  @Input() horizontal: boolean;
-  @Input() enableWindowScroll : boolean = false;
-  @Output() endVisible = new EventEmitter();
+  @Input() 
+  public horizontal: boolean;
+  @Input() 
+  public enableWindowScroll : boolean = false;
+  @Input() 
+  public disableScrollListener: boolean = false;
+  
+  @Output() 
+  public endVisible = new EventEmitter();
 
-  el: HTMLElement;
-  endEl: HTMLElement;
-  elementVisible: any = elementVisible;
+  public el: HTMLElement;
+  public endEl: HTMLElement;
+  public elementVisible: any = elementVisible;
 
+
+  /**
+   * Creates an instance of NguiInfiniteListDirective.
+   * @param {ElementRef} el 
+   * 
+   * @memberOf NguiInfiniteListDirective
+   */
   constructor(el: ElementRef) {
     this.el = el.nativeElement;
-    
   }
 
-  // setup list of sections
+  /**
+   * Setup list of sections
+   * 
+   * @memberOf NguiInfiniteListDirective
+   */
   ngOnInit(): void {
     this.endEl = <HTMLElement>this.el.querySelector('[ngui-infinite-list-end]');
     if (!this.endEl) { throw "Invalid 'ngui-infinite-list-end";}
@@ -32,19 +48,27 @@ export class NguiInfiniteListDirective {
     window.addEventListener('resize', this.scrollListener);
   }
   
+
+  /**
+   * Handles the scroll listener event.
+   * 
+   * @memberOf NguiInfiniteListDirective
+   */
   scrollListener = () => {
-    let visible;
-    if(this.enableWindowScroll){
-      visible = this.elementVisible(this.endEl,window)
-    } else {
-      visible = this.elementVisible(this.endEl, this.el);
-    }
-    
-    if (this.horizontal && (visible.left || visible.right)) {
-      this.endVisible.emit(true); 
-    } else if (!this.horizontal && (visible.top || visible.bottom)) {
-      this.endVisible.emit(true); 
-    }
+    if (!this.disableScrollListener) {
+      let visible;
+      if(this.enableWindowScroll){
+        visible = this.elementVisible(this.endEl,window)
+      } else {
+        visible = this.elementVisible(this.endEl, this.el);
+      }
+      
+      if (this.horizontal && (visible.left || visible.right)) {
+        this.endVisible.emit(true); 
+      } else if (!this.horizontal && (visible.top || visible.bottom)) {
+        this.endVisible.emit(true); 
+      }
+  }
   }
   
 }

@@ -3,7 +3,7 @@ import {Component, Type} from '@angular/core'
 @Component({
   selector: 'my-app',
   template: `
-<ul ngui-infinite-list  class="infinite-list"
+<ul ngui-infinite-list class="infinite-list" [disableScrollListener]="set1.loadingInProgress"
  (endVisible)="loadMore(set1)">
   <li *ngFor="let item of set1.list">{{item+1}}</li>
   <div ngui-infinite-list-end>
@@ -13,7 +13,7 @@ import {Component, Type} from '@angular/core'
 </ul>
 loading in progress : {{set1.loadingInProgress}}
 
-<div ngui-infinite-list horizontal="true" class="infinite-list horizontal"
+<div ngui-infinite-list horizontal="true" class="infinite-list horizontal" [disableScrollListener]="set2.loadingInProgress"
   (endVisible)="loadMore(set2)">
   <div *ngFor="let item of set2.list">{{item+1}}</div>
   <div ngui-infinite-list-end>
@@ -62,20 +62,18 @@ export class AppComponent {
   };
 
   loadMore(data) {
-    if (!data.loadingInProgress) {
-      if (data.offset > 99) {    // detect the end of list
-        data.endOfList = true;
-      } else {
-        setTimeout(() => data.loadingInProgress = true);
-        setTimeout(() => {      // mimics http call delay
-          let max = data.offset + data.limit;
-          for (let i = data.offset; i < max; i++) {
-            data.list.push(i);
-          }
-          data.offset = max;
-          data.loadingInProgress = false;
-        }, 1000);
-      }
+    if (data.offset > 99) {    // detect the end of list
+      data.endOfList = true;
+    } else {
+      setTimeout(() => data.loadingInProgress = true);
+      setTimeout(() => {      // mimics http call delay
+        let max = data.offset + data.limit;
+        for (let i = data.offset; i < max; i++) {
+          data.list.push(i);
+        }
+        data.offset = max;
+        data.loadingInProgress = false;
+      }, 1000);
     }
   }
 }
