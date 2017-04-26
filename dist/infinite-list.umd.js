@@ -7,7 +7,7 @@
 		exports["infinite-list"] = factory(require("@angular/core"), require("@angular/forms"), require("@angular/platform-browser"));
 	else
 		root["infinite-list"] = factory(root["@angular/core"], root["@angular/forms"], root["@angular/platform-browser"]);
-})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_6__, __WEBPACK_EXTERNAL_MODULE_7__) {
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_8__, __WEBPACK_EXTERNAL_MODULE_9__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -16,9 +16,9 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	function __webpack_require__(moduleId) {
 /******/
 /******/ 		// Check if module is in cache
-/******/ 		if(installedModules[moduleId])
+/******/ 		if(installedModules[moduleId]) {
 /******/ 			return installedModules[moduleId].exports;
-/******/
+/******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = installedModules[moduleId] = {
 /******/ 			i: moduleId,
@@ -73,7 +73,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 18);
+/******/ 	return __webpack_require__(__webpack_require__.s = 20);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -84,6 +84,45 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
 
 /***/ }),
 /* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var MemoryStorage = (function () {
+    function MemoryStorage() {
+        this.data = {};
+    }
+    Object.defineProperty(MemoryStorage.prototype, "length", {
+        get: function () { return Object.keys(this.data).length; },
+        enumerable: true,
+        configurable: true
+    });
+    MemoryStorage.prototype.getItem = function (key) { return this.data[key]; };
+    MemoryStorage.prototype.setItem = function (key, value) { this.data[key] = value; };
+    MemoryStorage.prototype.removeItem = function (key) { delete this.data[key]; };
+    MemoryStorage.prototype.clear = function () { this.data = {}; };
+    MemoryStorage.prototype.key = function (num) { return Object.keys(this.data)[num]; };
+    return MemoryStorage;
+}());
+MemoryStorage = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], MemoryStorage);
+exports.MemoryStorage = MemoryStorage;
+//# sourceMappingURL=memory-storage.js.map
+
+/***/ }),
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
@@ -660,7 +699,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:t
 }());
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
@@ -3147,7 +3186,7 @@ if (!Object.values) {
 }());
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3205,7 +3244,7 @@ exports.HtmlCodePipe = HtmlCodePipe;
 //# sourceMappingURL=html-code.pipe.js.map
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3220,7 +3259,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var js_beautify = __webpack_require__(16);
+var js_beautify = __webpack_require__(18);
 var JavascriptCodePipe = (function () {
     function JavascriptCodePipe() {
     }
@@ -3239,7 +3278,77 @@ exports.JavascriptCodePipe = JavascriptCodePipe;
 //# sourceMappingURL=javascript-code.pipe.js.map
 
 /***/ }),
-/* 5 */
+/* 6 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var core_1 = __webpack_require__(0);
+var memory_storage_1 = __webpack_require__(1);
+var Storage = (function () {
+    function Storage() {
+        // preference && (this.preference = preference);   //'localStorage' or 'sessionStorage'
+        this.preference = 'sessionStorage';
+        if (this.preference == 'localStorage' && this.hasStorage('localStorage')) {
+            this.storage = window.localStorage;
+        }
+        else if (this.preference == 'sessionStorage' && this.hasStorage('sessionStorage')) {
+            this.storage = window.sessionStorage;
+        }
+        else {
+            this.storage = new memory_storage_1.MemoryStorage();
+        }
+    }
+    Object.defineProperty(Storage.prototype, "length", {
+        get: function () { return this.storage.length; },
+        enumerable: true,
+        configurable: true
+    });
+    Storage.prototype.getItem = function (key) {
+        var strValue = this.storage.getItem(key);
+        try {
+            return JSON.parse(strValue);
+        }
+        catch (e) {
+            return strValue;
+        }
+    };
+    Storage.prototype.setItem = function (key, value) {
+        var strValue = typeof value === 'object' ? JSON.stringify(value) : value.toString();
+        this.storage.setItem(key, strValue);
+    };
+    Storage.prototype.removeItem = function (key) { this.storage.removeItem(key); };
+    Storage.prototype.clear = function () { this.storage.clear(); };
+    Storage.prototype.hasStorage = function (name) {
+        try {
+            window[name].setItem('test', '1');
+            window[name].removeItem('test');
+            return true;
+        }
+        catch (e) {
+            return false;
+        }
+    };
+    return Storage;
+}());
+Storage = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [])
+], Storage);
+exports.Storage = Storage;
+//# sourceMappingURL=storage.js.map
+
+/***/ }),
+/* 7 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3255,31 +3364,49 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var utils_1 = __webpack_require__(14);
+var utils_1 = __webpack_require__(16);
 var NguiInfiniteListDirective = (function () {
+    /**
+     * Creates an instance of NguiInfiniteListDirective.
+     * @param {ElementRef} el
+     *
+     * @memberOf NguiInfiniteListDirective
+     */
     function NguiInfiniteListDirective(el) {
         var _this = this;
         this.enableWindowScroll = false;
+        this.disableScrollListener = false;
         this.endVisible = new core_1.EventEmitter();
         this.elementVisible = utils_1.elementVisible;
+        /**
+         * Handles the scroll listener event.
+         *
+         * @memberOf NguiInfiniteListDirective
+         */
         this.scrollListener = function () {
-            var visible;
-            if (_this.enableWindowScroll) {
-                visible = _this.elementVisible(_this.endEl, window);
-            }
-            else {
-                visible = _this.elementVisible(_this.endEl, _this.el);
-            }
-            if (_this.horizontal && (visible.left || visible.right)) {
-                _this.endVisible.emit(true);
-            }
-            else if (!_this.horizontal && (visible.top || visible.bottom)) {
-                _this.endVisible.emit(true);
+            if (!_this.disableScrollListener) {
+                var visible = void 0;
+                if (_this.enableWindowScroll) {
+                    visible = _this.elementVisible(_this.endEl, window);
+                }
+                else {
+                    visible = _this.elementVisible(_this.endEl, _this.el);
+                }
+                if (_this.horizontal && (visible.left || visible.right)) {
+                    _this.endVisible.emit(true);
+                }
+                else if (!_this.horizontal && (visible.top || visible.bottom)) {
+                    _this.endVisible.emit(true);
+                }
             }
         };
         this.el = el.nativeElement;
     }
-    // setup list of sections
+    /**
+     * Setup list of sections
+     *
+     * @memberOf NguiInfiniteListDirective
+     */
     NguiInfiniteListDirective.prototype.ngOnInit = function () {
         this.endEl = this.el.querySelector('[ngui-infinite-list-end]');
         if (!this.endEl) {
@@ -3305,6 +3432,10 @@ __decorate([
     __metadata("design:type", Boolean)
 ], NguiInfiniteListDirective.prototype, "enableWindowScroll", void 0);
 __decorate([
+    core_1.Input(),
+    __metadata("design:type", Boolean)
+], NguiInfiniteListDirective.prototype, "disableScrollListener", void 0);
+__decorate([
     core_1.Output(),
     __metadata("design:type", Object)
 ], NguiInfiniteListDirective.prototype, "endVisible", void 0);
@@ -3316,19 +3447,19 @@ exports.NguiInfiniteListDirective = NguiInfiniteListDirective;
 
 
 /***/ }),
-/* 6 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_6__;
-
-/***/ }),
-/* 7 */
-/***/ (function(module, exports) {
-
-module.exports = __WEBPACK_EXTERNAL_MODULE_7__;
-
-/***/ }),
 /* 8 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_8__;
+
+/***/ }),
+/* 9 */
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_9__;
+
+/***/ }),
+/* 10 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3361,7 +3492,7 @@ exports.NguiUtilsDirective = NguiUtilsDirective;
 //# sourceMappingURL=utils.directive.js.map
 
 /***/ }),
-/* 9 */
+/* 11 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3408,7 +3539,7 @@ exports.computedStyle = computedStyle;
 //# sourceMappingURL=computed-style.js.map
 
 /***/ }),
-/* 10 */
+/* 12 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3468,7 +3599,7 @@ exports.elementVisible = elementVisible;
 //# sourceMappingURL=element-visible.js.map
 
 /***/ }),
-/* 11 */
+/* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3485,7 +3616,7 @@ exports.outerHeight = outerHeight;
 //# sourceMappingURL=outer-height.js.map
 
 /***/ }),
-/* 12 */
+/* 14 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3502,7 +3633,7 @@ exports.outerWidth = outerWidth;
 //# sourceMappingURL=outer-width.js.map
 
 /***/ }),
-/* 13 */
+/* 15 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3562,31 +3693,40 @@ exports.scrollTo = scrollTo;
 //# sourceMappingURL=scroll-to.js.map
 
 /***/ }),
-/* 14 */
+/* 16 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
-var scroll_to_1 = __webpack_require__(13);
+/* dom functions */
+var scroll_to_1 = __webpack_require__(15);
 exports.scrollTo = scroll_to_1.scrollTo;
-var element_visible_1 = __webpack_require__(10);
+var element_visible_1 = __webpack_require__(12);
 exports.elementVisible = element_visible_1.elementVisible;
-var computed_style_1 = __webpack_require__(9);
+var computed_style_1 = __webpack_require__(11);
 exports.computedStyle = computed_style_1.computedStyle;
-var outer_width_1 = __webpack_require__(12);
+var outer_width_1 = __webpack_require__(14);
 exports.outerWidth = outer_width_1.outerWidth;
-var outer_height_1 = __webpack_require__(11);
+var outer_height_1 = __webpack_require__(13);
 exports.outerHeight = outer_height_1.outerHeight;
-var html_code_pipe_1 = __webpack_require__(3);
+/*  pipes */
+var html_code_pipe_1 = __webpack_require__(4);
 exports.HtmlCodePipe = html_code_pipe_1.HtmlCodePipe;
-var javascript_code_pipe_1 = __webpack_require__(4);
+var javascript_code_pipe_1 = __webpack_require__(5);
 exports.JavascriptCodePipe = javascript_code_pipe_1.JavascriptCodePipe;
-var utils_module_1 = __webpack_require__(15);
+/* services */
+var memory_storage_1 = __webpack_require__(1);
+exports.MemoryStorage = memory_storage_1.MemoryStorage;
+var storage_1 = __webpack_require__(6);
+exports.Storage = storage_1.Storage;
+/* module */
+var utils_module_1 = __webpack_require__(17);
 exports.NguiUtilsModule = utils_module_1.NguiUtilsModule;
 //# sourceMappingURL=index.js.map
 
+
 /***/ }),
-/* 15 */
+/* 17 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3601,9 +3741,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = __webpack_require__(0);
-var html_code_pipe_1 = __webpack_require__(3);
-var javascript_code_pipe_1 = __webpack_require__(4);
-var utils_directive_1 = __webpack_require__(8);
+var html_code_pipe_1 = __webpack_require__(4);
+var javascript_code_pipe_1 = __webpack_require__(5);
+var utils_directive_1 = __webpack_require__(10);
+/* services */
+var memory_storage_1 = __webpack_require__(1);
+var storage_1 = __webpack_require__(6);
 var NguiUtilsModule = (function () {
     function NguiUtilsModule() {
     }
@@ -3611,6 +3754,10 @@ var NguiUtilsModule = (function () {
 }());
 NguiUtilsModule = __decorate([
     core_1.NgModule({
+        providers: [
+            memory_storage_1.MemoryStorage,
+            storage_1.Storage
+        ],
         declarations: [
             html_code_pipe_1.HtmlCodePipe,
             javascript_code_pipe_1.JavascriptCodePipe,
@@ -3628,7 +3775,7 @@ exports.NguiUtilsModule = NguiUtilsModule;
 //# sourceMappingURL=utils.module.js.map
 
 /***/ }),
-/* 16 */
+/* 18 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -3696,9 +3843,9 @@ function get_beautify(js_beautify, css_beautify, html_beautify) {
 if (true) {
     // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
     !(__WEBPACK_AMD_DEFINE_ARRAY__ = [
+        __webpack_require__(3),
         __webpack_require__(2),
-        __webpack_require__(1),
-        __webpack_require__(17)
+        __webpack_require__(19)
     ], __WEBPACK_AMD_DEFINE_RESULT__ = function(js_beautify, css_beautify, html_beautify) {
         return get_beautify(js_beautify, css_beautify, html_beautify);
     }.apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
@@ -3715,7 +3862,7 @@ if (true) {
 }
 
 /***/ }),
-/* 17 */
+/* 19 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:true, eqeqeq:true, laxbreak:true, noempty:false */
@@ -4814,9 +4961,9 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:t
 
     if (true) {
         // Add support for AMD ( https://github.com/amdjs/amdjs-api/wiki/AMD#defineamd-property- )
-        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, __webpack_require__(2), __webpack_require__(1)], __WEBPACK_AMD_DEFINE_RESULT__ = function(requireamd) {
-            var js_beautify = __webpack_require__(2);
-            var css_beautify = __webpack_require__(1);
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__, __webpack_require__(3), __webpack_require__(2)], __WEBPACK_AMD_DEFINE_RESULT__ = function(requireamd) {
+            var js_beautify = __webpack_require__(3);
+            var css_beautify = __webpack_require__(2);
 
             return {
                 html_beautify: function(html_source, options) {
@@ -4849,7 +4996,7 @@ var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*jshint curly:t
 }());
 
 /***/ }),
-/* 18 */
+/* 20 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -4862,9 +5009,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = __webpack_require__(0);
-var forms_1 = __webpack_require__(6);
-var platform_browser_1 = __webpack_require__(7);
-var infinite_list_directive_1 = __webpack_require__(5);
+var forms_1 = __webpack_require__(8);
+var platform_browser_1 = __webpack_require__(9);
+var infinite_list_directive_1 = __webpack_require__(7);
 exports.NguiInfiniteListDirective = infinite_list_directive_1.NguiInfiniteListDirective;
 var NguiInfiniteListModule = (function () {
     function NguiInfiniteListModule() {
