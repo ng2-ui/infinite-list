@@ -1,13 +1,8 @@
 # infinite-list
 Angular2 Infinite List directive
 
-## IMPORTANT NOTICE
-
-After 0.6.0 or higher, `ng2-infinite-list` has been changed to `@ngui/infinite-list`. Here are the changes;
-
-* Module `ng2-infinite-list` is changed to `@ngui/infinite-list`.
-* Direvtive `ng2-infinite-list` is changed to `ngui-infinite-list`.
-* Class name `Ng2InfiniteListModule` is changed to `NguiInfiniteListModule`.
+## IMPORTANT: NOT-MAINTAINED
+Accepting volunteers and ready to transfer ownership.
 
 <a href="https://rawgit.com/ng2-ui/infinite-list/master/app/index.html">
   <img src="http://i.imgur.com/5SDqQ6t.png"width="50% border="1" />
